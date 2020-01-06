@@ -1,4 +1,3 @@
-import com.google.protobuf.Timestamp;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -11,7 +10,7 @@ public class TestingEntities
 {
     public static void main(String [] args) {
         SessionFactory factory = new Configuration()
-                .configure("hibernate.cfg.xml")
+                .configure("sample/module/hibernate.cfg.xml")
                 .addAnnotatedClass(Client.class)
                 .addAnnotatedClass(Employee.class)
                 .addAnnotatedClass(Reservation.class)
@@ -21,7 +20,7 @@ public class TestingEntities
         Session session = factory.getCurrentSession();
         try{
             session.beginTransaction();
-            //addClients(session);
+            addClients(session);
             //addEmployee(session);
             //addRoom(session);
             //addTimetable(session, 2);

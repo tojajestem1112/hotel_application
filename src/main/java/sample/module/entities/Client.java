@@ -28,6 +28,9 @@ public class Client {
     @OneToMany(mappedBy = "client")
     private List<Reservation> reservations;
 
+    @Column(name="personal_id_number")
+    private long personalIdNumber;
+
     public Client(){}
 
     public Client(String name, String surname) {

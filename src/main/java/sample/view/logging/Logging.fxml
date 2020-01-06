@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.logging.Logging">
+   <children>
+      <AnchorPane layoutX="459.0" layoutY="-1.0" prefHeight="600.0" prefWidth="491.0">
+         <children>
+            <Text layoutX="98.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logging in" wrappingWidth="283.73670959472656">
+               <font>
+                  <Font name="Lato Light" size="34.0" />
+               </font>
+            </Text>
+            <TextField fx:id="usernameField" layoutX="98.0" layoutY="300.0" prefHeight="26.0" prefWidth="327.0" promptText="username">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="passwordField" layoutX="98.0" layoutY="393.0" prefHeight="26.0" prefWidth="327.0" promptText="password">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </PasswordField>
+            <Button fx:id="logInButton" layoutX="333.0" layoutY="442.0" mnemonicParsing="false" onAction="#logging" prefHeight="31.0" prefWidth="91.0" text="Log in" />
+            <Text layoutX="98.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" wrappingWidth="283.73670959472656">
+               <font>
+                  <Font name="Lato Light" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="98.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="283.73670959472656">
+               <font>
+                  <Font name="Lato Light" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="RED" layoutX="98.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid username or password!" visible="false" wrappingWidth="200.5367431640625" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

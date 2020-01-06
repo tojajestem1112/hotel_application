@@ -10,6 +10,12 @@ module studia.programowanie.zdarzeniowe {
     requires java.xml.bind;
     requires com.sun.xml.bind;
     requires com.fasterxml.classmate;
+    exports sample.Controller.logging;
+    exports sample.Controller.homeLeftPanel;
+    exports sample.Controller.homeCentralPanel;
 
     opens sample;
-}
+    opens sample.Controller.logging;
+    opens sample.module.entities;
+    opens sample.Controller.homeLeftPanel;
+        }

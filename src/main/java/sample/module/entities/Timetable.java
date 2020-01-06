@@ -31,6 +31,8 @@ public class Timetable implements Serializable
         this.employee = employee;
     }
 
+    public Timetable(){}
+
     public Timetable(String date, String startTime, String endTime)
     {
         this.date = Date.valueOf(date);

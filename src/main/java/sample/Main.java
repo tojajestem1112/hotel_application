@@ -5,26 +5,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-       /* SessionFactory a = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Student.class)
-                .buildSessionFactory();
-        Session session = a.getCurrentSession();
-        session.beginTransaction();
-        Student pozyskany = session.get(Student.class, 5);
-        System.out.println(pozyskany);*/
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
+
+        Parent root = FXMLLoader.load(getClass().getResource("/logging/logging.fxml"));
+        primaryStage.setMaxWidth(950);
+        primaryStage.setMinWidth(950);
+        primaryStage.setMaxHeight(600);
+        primaryStage.setMinHeight(600);
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
+
+
     }
 
 
