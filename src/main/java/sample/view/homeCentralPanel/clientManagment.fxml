@@ -8,62 +8,71 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="myAccount" prefHeight="600.0" prefWidth="282.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.homeCentralPanel.homeCentralPanel">
+<AnchorPane fx:id="contentPane" prefHeight="600.0" prefWidth="682.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.homeCentralPanel.homeCentralPanel">
    <children>
-      <Pane prefHeight="600.0" prefWidth="282.0" style="-fx-background-color: #1F7A8C;">
+      <AnchorPane fx:id="myAccount" prefHeight="600.0" prefWidth="282.0">
          <children>
-            <Text fill="WHITE" layoutX="32.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moje konto" wrappingWidth="210.93673706054688">
-               <font>
-                  <Font name="Calibri Bold" size="30.0" />
-               </font>
-            </Text>
-            <VBox layoutX="4.0" layoutY="244.0" prefHeight="355.0" prefWidth="269.0">
+            <Pane prefHeight="600.0" prefWidth="282.0" style="-fx-background-color: #1F7A8C;">
                <children>
-                  <AnchorPane prefHeight="46.0" prefWidth="270.0">
+                  <Text fill="WHITE" layoutX="32.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zarządzanie klientami" wrappingWidth="210.93673706054688">
+                     <font>
+                        <Font name="Calibri Bold" size="30.0" />
+                     </font>
+                  </Text>
+                  <VBox layoutX="4.0" layoutY="244.0" prefHeight="355.0" prefWidth="269.0">
                      <children>
-                        <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../icons/AccountManagment.png" />
-                           </image>
-                        </ImageView>
-                        <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wyświetl moje dane" wrappingWidth="185.3367156982422">
-                           <font>
-                              <Font size="17.0" />
-                           </font>
-                        </Text>
+                        <AnchorPane onMouseClicked="#showMyData" prefHeight="46.0" prefWidth="270.0">
+                           <children>
+                              <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../icons/AccountManagment.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wyświetl moje dane" wrappingWidth="185.3367156982422">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="46.0" prefWidth="270.0">
+                           <children>
+                              <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../icons/AccountManagment.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zmień moje dane" wrappingWidth="185.3367156982422">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="46.0" prefWidth="270.0">
+                           <children>
+                              <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../icons/AccountManagment.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pokaż mój grafik" wrappingWidth="185.3367156982422">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
                      </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="46.0" prefWidth="270.0">
-                     <children>
-                        <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../icons/AccountManagment.png" />
-                           </image>
-                        </ImageView>
-                        <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zmień moje dane" wrappingWidth="185.3367156982422">
-                           <font>
-                              <Font size="17.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="46.0" prefWidth="270.0">
-                     <children>
-                        <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../icons/AccountManagment.png" />
-                           </image>
-                        </ImageView>
-                        <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pokaż mój grafik" wrappingWidth="185.3367156982422">
-                           <font>
-                              <Font size="17.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </AnchorPane>
+                  </VBox>
                </children>
-            </VBox>
+            </Pane>
          </children>
-      </Pane>
+      </AnchorPane>
+      <AnchorPane fx:id="rightPane" layoutX="282.0" prefHeight="600.0" prefWidth="400.0">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

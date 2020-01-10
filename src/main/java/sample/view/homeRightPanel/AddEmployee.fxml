@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rightPane" prefHeight="600.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.homeRightPanel.AddRoom">
+   <children>
+      <AnchorPane fx:id="titlePane" layoutX="27.0" layoutY="39.0" prefHeight="71.0" prefWidth="370.0">
+         <children>
+            <Text layoutX="22.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj pokój" wrappingWidth="314.9367370605469">
+               <font>
+                  <Font name="Calibri Bold" size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="contentPane" layoutX="7.0" layoutY="135.0" prefHeight="470.0" prefWidth="410.0">
+         <children>
+            <TextField fx:id="roomNumberField" layoutX="131.0" layoutY="88.0" />
+            <Text layoutX="31.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numer pokoju:" />
+            <Text layoutX="31.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ilość osób:" wrappingWidth="79.21875" />
+            <TextField fx:id="peopleRoomNumber" layoutX="131.0" layoutY="118.0" />
+            <Button layoutX="254.0" layoutY="178.0" mnemonicParsing="false" onAction="#addRoom" text="Dodaj" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

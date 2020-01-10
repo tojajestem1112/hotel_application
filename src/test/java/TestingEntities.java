@@ -54,11 +54,11 @@ public class TestingEntities
         session.getTransaction().commit();
     }
     public static void addTimetable(Session session, int id) {
-        Employee employee = session.get(Employee.class, id);
+        /*Employee employee = session.get(Employee.class, id);
         Timetable tt = new Timetable("2017-11-16","16:30:00", "17:30:00");
         tt.setEmployee(employee);
         session.save(tt);
-        session.getTransaction().commit();
+        session.getTransaction().commit();*/
     }
     public static void addReservation(Session session){
         Date date1 = Date.valueOf("2019-10-30");

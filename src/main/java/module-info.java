@@ -13,9 +13,12 @@ module studia.programowanie.zdarzeniowe {
     exports sample.Controller.logging;
     exports sample.Controller.homeLeftPanel;
     exports sample.Controller.homeCentralPanel;
+    exports sample.Controller.homeRightPanel;
 
     opens sample;
     opens sample.Controller.logging;
     opens sample.module.entities;
     opens sample.Controller.homeLeftPanel;
+    opens sample.Controller.homeCentralPanel;
+    opens sample.Controller.homeRightPanel;
         }

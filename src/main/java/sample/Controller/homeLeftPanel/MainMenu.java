@@ -6,6 +6,7 @@ import javafx.scene.layout.AnchorPane;
 import sample.module.SavedData;
 import sample.module.dao.Dao;
 import sample.module.entities.Employee;
+import sample.view.ViewDetails;
 
 import java.io.IOException;
 
@@ -16,7 +17,7 @@ public class MainMenu
     @FXML
     AnchorPane mainPane;
     @FXML
-    AnchorPane centralPane;
+    AnchorPane contentPane;
     @FXML
     AnchorPane myAccount;
     @FXML
@@ -27,8 +28,6 @@ public class MainMenu
     AnchorPane employeeManagment;
     @FXML
     AnchorPane roomManagment;
-
-    private String showedCentralPage = "";
 
     public void logOut() throws IOException {
         System.out.println("log out");
@@ -53,15 +52,15 @@ public class MainMenu
     }
 
     private void showOrHideCentralPane(String idOfPane) throws IOException {
-        if(!showedCentralPage.equals(idOfPane)) {
+        if(!ViewDetails.getShowedCentralPanel().equals(idOfPane)) {
             AnchorPane tempPane = FXMLLoader.load(getClass().getResource("/homeCentralPanel/"+idOfPane+".fxml"));
-            centralPane.getChildren().setAll(tempPane);
-            showedCentralPage=idOfPane;
+            contentPane.getChildren().setAll(tempPane);
+            ViewDetails.setShowedCentralPanel(idOfPane);
 
         } else {
-            AnchorPane tempPane = FXMLLoader.load(getClass().getResource("/homeCentralPanel/empty.fxml"));
-            centralPane.getChildren().setAll(tempPane);
-            showedCentralPage="";
+            AnchorPane tempPane = FXMLLoader.load(getClass().getResource("/empty.fxml"));
+            contentPane.getChildren().setAll(tempPane);
+            ViewDetails.setShowedCentralPanel("");
         }
     }
 }

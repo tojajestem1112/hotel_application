@@ -1,19 +1,16 @@
 package sample.module.dao;
 
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 import sample.module.SavedData;
 import sample.module.entities.Employee;
+import sample.module.entities.Timetable;
 import sample.module.utils.Util;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
-import javax.persistence.metamodel.EntityType;
-import javax.persistence.metamodel.Metamodel;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -50,6 +47,16 @@ public class Dao
         session.update(obj);
         session.getTransaction().commit();
     }
+    public static List<Object> get(Class clazz)
+    {
+        Session session = factory.getCurrentSession();
+        session.beginTransaction();
+        String quer = "FROM "+clazz.getName();
+        Query query = session.createQuery(quer);
+        List<Object> list = query.getResultList();
+        session.close();
+        return list;
+    }
     public static void logIn(String email, String password)
     {
         Session session=factory.getCurrentSession();
@@ -60,8 +67,21 @@ public class Dao
         session.close();
         if(employee.size()==1)
             SavedData.setLoggedEmployee(employee.get(0));
+        session.close();
     }
+    public static List<Timetable> getTimetableOfEmployee(Date date1, Date date2, Employee empl) throws ParseException {
+        Session session = factory.getCurrentSession();
+        session.beginTransaction();
+        String hql = "FROM Timetable E WHERE E.date between :begin_date and :end_date and E.employee = :id ORDER BY E.date ASC";
+        Query query = session.createQuery(hql);
+        query.setParameter("begin_date", date1);
+        query.setParameter("end_date", date2);
+        query.setParameter("id", empl);
 
+        List<Timetable> list = query.getResultList();
+        session.close();
+        return list;
+    }
 
 
 
