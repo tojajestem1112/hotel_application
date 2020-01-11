@@ -28,9 +28,9 @@ public class MyTimetable
     @FXML
     TableColumn<Timetable, String> dataColumn;
     @FXML
-    TableColumn<Timetable, Time> begginingTime;
+    TableColumn<Timetable, String> begginingTime;
     @FXML
-    TableColumn<Timetable, Time> endingTime;
+    TableColumn<Timetable, String> endingTime;
 
     @FXML
     DatePicker beginDate;
@@ -58,8 +58,8 @@ public class MyTimetable
         Date endingDate = c.getTime();
         listOfHours = Dao.getTimetableOfEmployee(startDate, endingDate, SavedData.getLoggedEmployee());
         dataColumn.setCellValueFactory(new PropertyValueFactory<Timetable, String>("dateString"));
-        begginingTime.setCellValueFactory(new PropertyValueFactory<Timetable, Time>("startTime"));
-        endingTime.setCellValueFactory(new PropertyValueFactory<Timetable, Time>("endTime" ));
+        begginingTime.setCellValueFactory(new PropertyValueFactory<Timetable, String>("startTimeString"));
+        endingTime.setCellValueFactory(new PropertyValueFactory<Timetable, String>("endTimeString" ));
         timetable.setItems(getTimetable(startDate));
         //dataColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeature>);
 

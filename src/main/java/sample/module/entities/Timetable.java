@@ -5,10 +5,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.sql.Time;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
+
 @Entity
 @Table(name = "timetable")
 public class Timetable implements Serializable
@@ -32,6 +33,12 @@ public class Timetable implements Serializable
     @Transient
     private String dateString ="";
 
+    @Transient
+    private String startTimeString ="";
+
+    @Transient
+    private String endTimeString ="";
+
     public void setEmployee(Employee employee)
     {
         this.employee = employee;
@@ -41,8 +48,10 @@ public class Timetable implements Serializable
 
     public Timetable(String date, String startTime, String endTime) throws ParseException {
         this.date = new SimpleDateFormat("yyyy-MM-dd").parse(date);
-        this.startTime=Time.valueOf(startTime);
-        this.endTime=Time.valueOf(endTime);
+        SimpleDateFormat isoFormat = new SimpleDateFormat("HH:mm");
+        this.startTime=new Time(isoFormat.parse(startTime).getTime());
+
+        this.endTime=new Time(isoFormat.parse(endTime).getTime());
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         dateString = dateFormat.format(date);
     }
@@ -66,6 +75,7 @@ public class Timetable implements Serializable
     }
 
     public Time getStartTime() {
+        System.out.println("STARTTIME: "+startTime.getHours());
         return startTime;
     }
 
@@ -86,5 +96,19 @@ public class Timetable implements Serializable
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         dateString = dateFormat.format(date);
         return dateString;
+    }
+    public String getStartTimeString(){
+        if(endTime!=null) {
+            SimpleDateFormat isoFormat = new SimpleDateFormat("HH:mm");
+            startTimeString = isoFormat.format(startTime);
+        }
+        return startTimeString;
+    }
+    public String getEndTimeString(){
+        if(endTime!= null) {
+            SimpleDateFormat isoFormat = new SimpleDateFormat("HH:mm");
+            endTimeString = isoFormat.format(endTime);
+        }
+        return endTimeString;
     }
 }

@@ -1,6 +1,7 @@
 package sample.module.entities;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class Client {
     private List<Reservation> reservations;
 
     @Column(name="personal_id_number")
-    private long personalIdNumber;
+    private String personalIdNumber;
 
     public Client(){}
 
@@ -40,11 +41,12 @@ public class Client {
         this.emailAdress="EMPTY";
     }
 
-    public Client(String name, String surname, String phoneNumber, String email_adress) {
+    public Client(String name, String surname, String phoneNumber, String email_adress, String personalIdNumber ) {
         this.name = name;
         this.surname = surname;
         this.phoneNumber = phoneNumber;
         this.emailAdress = email_adress;
+        this.personalIdNumber = personalIdNumber;
 
     }
 
@@ -105,5 +107,9 @@ public class Client {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email_adress='" + emailAdress + '\'' +
                 '}';
+    }
+
+    public String getPersonalIdNumber() {
+        return personalIdNumber;
     }
 }

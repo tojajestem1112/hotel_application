@@ -4,15 +4,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import sample.module.SavedData;
-import sample.module.entities.Employee;
-import sample.module.entities.Timetable;
+import sample.module.entities.*;
 import sample.module.utils.Util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Dao
 {
@@ -82,7 +79,59 @@ public class Dao
         session.close();
         return list;
     }
+    public static List<Client> getClient(String personId)
+    {
+        Session session = factory.getCurrentSession();
+        session.beginTransaction();
+        String hql = "FROM Client E WHERE E.personalIdNumber = '"+personId+"'";;
+        Query query = session.createQuery(hql);
+        List<Client> list = query.getResultList();
+        session.close();
+        return list;
+    }
+    public static List<Reservation> getReservations(Client client)
+    {
+        Session session = factory.getCurrentSession();
+        session.beginTransaction();
+        String hql = "FROM Reservation E WHERE E.client = :client";;
+        Query query = session.createQuery(hql);
+        query.setParameter("client", client);
+        List<Reservation> list = query.getResultList();
+        session.close();
+        return list;
+    }
+    public static Date getDate()
+    {
+        Session session = factory.getCurrentSession();
+        session.beginTransaction();
+        String hql = "SELECT CURRENT_DATE() from Client";
+        Query query = session.createQuery(hql);
+        List<Date> dates = query.getResultList();
+        session.close();
+        return dates.get(0);
+    }
+    public static List<Integer> getBusyRooms(Date date1, Date date2)
+    {
+        Session session = factory.getCurrentSession();
+        session.beginTransaction();
+        String hql = "SELECT distinct r FROM Room r left outer join r.reservations res "
+                +" WHERE :date1 between res.reservationFrom and res.reservationUtil "
+                +" OR :date2 between res.reservationFrom and res.reservationUtil "
+                +" OR res.reservationFrom between :date1 and :date2 "
+                +" OR res.reservationUtil between :date1 and :date2";
+        Query query = session.createQuery(hql);
+        query.setParameter("date1", date1);
+        query.setParameter("date2", date2);
+        List<Room> rooms = query.getResultList();
+        List<Integer> returning = new ArrayList<>();
+        for(int i=0; i<rooms.size(); i++)
+        {
+            returning.add(rooms.get(i).getNumberOfRoom());
+        }
 
+        session.close();
+        return returning;
+    }
 
 
 }

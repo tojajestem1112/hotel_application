@@ -50,20 +50,6 @@
                               </Text>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="reservationManagment" onMouseClicked="#reservationManagment" prefHeight="46.0" prefWidth="270.0">
-                           <children>
-                              <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../icons/AccountManagment.png" />
-                                 </image>
-                              </ImageView>
-                              <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zarządzaj rezerwacjami" wrappingWidth="185.3367156982422">
-                                 <font>
-                                    <Font size="17.0" />
-                                 </font>
-                              </Text>
-                           </children>
-                        </AnchorPane>
                         <AnchorPane fx:id="employeeManagment" onMouseClicked="#employeeManagment" prefHeight="46.0" prefWidth="270.0">
                            <children>
                               <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">

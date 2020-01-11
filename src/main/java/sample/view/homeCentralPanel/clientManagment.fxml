@@ -21,42 +21,84 @@
                   </Text>
                   <VBox layoutX="4.0" layoutY="244.0" prefHeight="355.0" prefWidth="269.0">
                      <children>
-                        <AnchorPane onMouseClicked="#showMyData" prefHeight="46.0" prefWidth="270.0">
+                        <AnchorPane onMouseClicked="#addClient" prefHeight="46.0" prefWidth="270.0">
                            <children>
                               <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../icons/AccountManagment.png" />
                                  </image>
                               </ImageView>
-                              <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wyświetl moje dane" wrappingWidth="185.3367156982422">
+                              <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj klienta" wrappingWidth="185.3367156982422">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
                               </Text>
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="46.0" prefWidth="270.0">
+                        <AnchorPane onMousePressed="#deleteClient" prefHeight="46.0" prefWidth="270.0">
                            <children>
                               <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../icons/AccountManagment.png" />
                                  </image>
                               </ImageView>
-                              <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zmień moje dane" wrappingWidth="185.3367156982422">
+                              <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuń klienta" wrappingWidth="185.3367156982422">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
                               </Text>
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="46.0" prefWidth="270.0">
+                        <AnchorPane onMousePressed="#editClient" prefHeight="46.0" prefWidth="270.0">
                            <children>
                               <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../icons/AccountManagment.png" />
                                  </image>
                               </ImageView>
-                              <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pokaż mój grafik" wrappingWidth="185.3367156982422">
+                              <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edytuj klienta" wrappingWidth="185.3367156982422">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane onMousePressed="#clientsReservation" prefHeight="46.0" prefWidth="270.0">
+                           <children>
+                              <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../icons/AccountManagment.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rezerwacje klienta" wrappingWidth="185.3367156982422">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane onMousePressed="#addReservation" prefHeight="46.0" prefWidth="270.0">
+                           <children>
+                              <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../icons/AccountManagment.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj rezerwację" wrappingWidth="185.3367156982422">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane onMousePressed="#checkingOut" prefHeight="46.0" prefWidth="270.0">
+                           <children>
+                              <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../icons/AccountManagment.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wymeldowywania" wrappingWidth="185.3367156982422">
                                  <font>
                                     <Font size="17.0" />
                                  </font>

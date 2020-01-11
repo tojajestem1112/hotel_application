@@ -50,6 +50,37 @@ public class homeCentralPanel
     public void addEmployee()throws IOException{
         showOrHideRightPane("AddEmployee");
     }
+    public void showEmployees() throws IOException{
+        showOrHideRightPane("ShowEmployees");
+    }
+    public void deleteEmployee() throws IOException{
+        showOrHideRightPane("DeleteEmployee");
+    }
+
+    public void editEmployee() throws IOException{
+        showOrHideRightPane("EditEmployee");
+    }
+    public void employeesTimetable() throws IOException {
+        showOrHideRightPane("Employeestimetable");
+    }
+    public void addClient() throws IOException {
+        showOrHideRightPane("AddClient");
+    }
+    public void editClient() throws IOException{
+        showOrHideRightPane("EditClient");
+    }
+    public void deleteClient() throws IOException {
+        showOrHideRightPane("DeleteClient");
+    }
+    public void clientsReservation() throws IOException {
+        showOrHideRightPane("ClientsReservation");
+    }
+    public void addReservation() throws IOException {
+        showOrHideRightPane("AddReservation");
+    }
+    public void checkingOut() throws IOException {
+        showOrHideRightPane("CheckingOut");
+    }
     private void showOrHideRightPane(String idOfPane) throws IOException {
 
         if(!ViewDetails.getShowedRightPanel().equals(idOfPane)) {

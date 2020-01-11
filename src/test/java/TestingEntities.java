@@ -33,11 +33,11 @@ public class TestingEntities
         }
     }
     public static void addClients(Session session) {
-        Client temp1 = new Client("Dawid", "Jalowski");
+        /*Client temp1 = new Client("Dawid", "Jalowski");
         Client temp2 = new Client("Dawid", "Jalowski2", "+48 999 999 999", "jalowskidaw@gmail.com");
         session.save(temp1);
         session.save(temp2);
-        session.getTransaction().commit();
+        session.getTransaction().commit();*/
     }
     public static void addEmployee(Session session) {
         Employee empl1 = new Employee("Dawid", "Jalowski1", "AlaMaKota", "Administrator");
@@ -61,7 +61,7 @@ public class TestingEntities
         session.getTransaction().commit();*/
     }
     public static void addReservation(Session session){
-        Date date1 = Date.valueOf("2019-10-30");
+      /*  Date date1 = Date.valueOf("2019-10-30");
         Date date2 = Date.valueOf("2019-11-30");
         Reservation res = new Reservation(date1,date2,true);
         res.setClient(session.get(Client.class, 1));
@@ -70,6 +70,6 @@ public class TestingEntities
         res.addRoom(session.get(Room.class,2));
         res.setTotalCost(new BigDecimal(20.20));
         session.save(res);
-        session.getTransaction().commit();
+        session.getTransaction().commit();*/
     }
 }

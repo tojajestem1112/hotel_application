@@ -10,11 +10,11 @@ public class SavedData
     {
         loggedEmployee = null;
     }
-
+    private static final int PRICE = 35;
     public static Employee getLoggedEmployee() {
         return loggedEmployee;
     }
-
+    public static int getPrice(){return PRICE;}
     public static void setLoggedEmployee(Employee loggedEmployee) {
         SavedData.loggedEmployee = loggedEmployee;
     }

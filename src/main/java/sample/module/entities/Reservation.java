@@ -1,13 +1,17 @@
 package sample.module.entities;
 
 import org.hibernate.annotations.CreationTimestamp;
+import sample.module.SavedData;
+import sample.module.dao.Dao;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.sql.Date;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Entity
 @Table(name="reservation")
@@ -40,7 +44,7 @@ public class Reservation
     @JoinColumn(name="id_client")
     private Client client;
 
-    @ManyToMany(fetch=FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+    @ManyToMany(fetch=FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                 CascadeType.DETACH, CascadeType.REFRESH})
     @JoinTable(
             name="reservation_room",
@@ -49,17 +53,21 @@ public class Reservation
     )
     private List<Room> rooms;
 
-    @Column(name="checked_out")
-    private boolean checkedOut;
+    @Column(name="realization_status")
+    private String realizationStatus;
 
     public Reservation()
     {
     }
 
-    public Reservation(Date reservationFrom, Date reservationUtil, boolean checkedOut) {
+    public Reservation(Date reservationFrom, Date reservationUtil) {
         this.reservationFrom = reservationFrom;
         this.reservationUtil = reservationUtil;
-        this.checkedOut = checkedOut;
+        Date currentDate = Dao.getDate();
+        if(reservationFrom.getTime()==currentDate.getTime())
+            this.realizationStatus = "IN REALIZATION";
+        else
+            this.realizationStatus="NOT STARTED";
 
     }
 
@@ -127,12 +135,12 @@ public class Reservation
         this.rooms = rooms;
     }
 
-    public boolean isCheckedOut() {
-        return checkedOut;
+    public String getRealizationStatus() {
+        return realizationStatus;
     }
 
-    public void setCheckedOut(boolean checkedOut) {
-        this.checkedOut = checkedOut;
+    public void setCheckedOut(String realizationStatus) {
+        this.realizationStatus = realizationStatus;
     }
 
     public void addRoom(Room room)
@@ -143,5 +151,44 @@ public class Reservation
         }
         rooms.add(room);
     }
+    public void setRealizationStatus(String status)
+    {
+        this.realizationStatus=status;
+    }
+    public void changeReservationStatus()
+    {
+        if(realizationStatus.equals("NOT STARTED"))
+        {
+            realizationStatus="IN REALIZATION";
+        }
+        else if(realizationStatus.equals("IN REALIZATION"))
+        {
+            realizationStatus="ENDED";
+        }
+    }
+    public String toString()
+    {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String returning =  "Od "+format.format(reservationFrom) + " Do "+ format.format(reservationUtil.getTime()) +" Status "+ realizationStatus +" Koszt: "+totalCost+ " Pokoje: ";
+        for(int i=0; i<rooms.size(); i++)
+        {
+            returning += " "+rooms.get(i).getNumberOfRoom();
+        }
+        returning+= "Osoba " +client.getName()+" "+client.getSurname()+ client.getPersonalIdNumber()+ "  Tel "+client.getPhoneNumber();
+        return returning;
+    }
 
+    public void calculateTotalCost()
+    {
+
+        long tempTimeInMillis =reservationUtil.getTime()-reservationFrom.getTime();
+        int numberOfDays = (int) TimeUnit.DAYS.convert(tempTimeInMillis, TimeUnit.MILLISECONDS)+1;
+        int numberOfPerson = 0;
+        for(int i=0; i<rooms.size();i++)
+        {
+            numberOfPerson+=rooms.get(i).getNumberOfPeople();
+        }
+        System.out.println(numberOfDays + " "+ numberOfPerson + " "+ SavedData.getPrice());
+        totalCost = new BigDecimal(numberOfDays*numberOfPerson* SavedData.getPrice());
+    }
 }
