@@ -80,7 +80,14 @@
             </resource>
             <resource>
                 <filtering>false</filtering>
-                <directory>src/main/java/sample/module</directory>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.gif</include>
+                </includes>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/java/sample/model</directory>
                 <includes>
                     <include>**/*.xml</include>
                 </includes>

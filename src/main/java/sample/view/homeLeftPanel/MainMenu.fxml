@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.homeLeftPanel.MainMenu">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.homeLeftPanel.MainMenuController">
    <children>
       <AnchorPane fx:id="leftPane" prefHeight="600.0" prefWidth="267.0">
          <children>
@@ -23,11 +21,6 @@
                      <children>
                         <AnchorPane fx:id="myAccount" onMouseClicked="#myAccount" prefHeight="46.0" prefWidth="270.0">
                            <children>
-                              <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../icons/AccountManagment.png" />
-                                 </image>
-                              </ImageView>
                               <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moje konto" wrappingWidth="185.3367156982422">
                                  <font>
                                     <Font size="17.0" />
@@ -38,11 +31,6 @@
                         </AnchorPane>
                         <AnchorPane fx:id="clientManagment" onMouseClicked="#clientManagment" prefHeight="46.0" prefWidth="270.0">
                            <children>
-                              <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../icons/AccountManagment.png" />
-                                 </image>
-                              </ImageView>
                               <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zarządzaj klientami" wrappingWidth="185.3367156982422">
                                  <font>
                                     <Font size="17.0" />
@@ -52,11 +40,6 @@
                         </AnchorPane>
                         <AnchorPane fx:id="employeeManagment" onMouseClicked="#employeeManagment" prefHeight="46.0" prefWidth="270.0">
                            <children>
-                              <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../icons/AccountManagment.png" />
-                                 </image>
-                              </ImageView>
                               <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zarządzaj pracownikami" wrappingWidth="185.3367156982422">
                                  <font>
                                     <Font size="17.0" />
@@ -66,11 +49,6 @@
                         </AnchorPane>
                         <AnchorPane fx:id="roomManagment" onMouseClicked="#roomManagment" prefHeight="46.0" prefWidth="270.0">
                            <children>
-                              <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../icons/AccountManagment.png" />
-                                 </image>
-                              </ImageView>
                               <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zarządzaj pokojami" wrappingWidth="185.3367156982422">
                                  <font>
                                     <Font size="17.0" />
@@ -80,11 +58,6 @@
                         </AnchorPane>
                         <AnchorPane fx:id="logOut" onMouseClicked="#logOut" prefHeight="46.0" prefWidth="270.0">
                            <children>
-                              <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../icons/AccountManagment.png" />
-                                 </image>
-                              </ImageView>
                               <Text fill="WHITE" layoutX="70.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wyloguj" wrappingWidth="185.3367156982422">
                                  <font>
                                     <Font size="17.0" />

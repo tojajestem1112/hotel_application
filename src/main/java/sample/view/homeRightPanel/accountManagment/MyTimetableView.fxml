@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.homeRightPanel.accountManagment.MyTimetableController">
+   <children>
+      <AnchorPane fx:id="titlePane" layoutX="27.0" layoutY="39.0" prefHeight="71.0" prefWidth="370.0">
+         <children>
+            <Text layoutX="22.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mój grafik" wrappingWidth="314.9367370605469">
+               <font>
+                  <Font name="Calibri Bold" size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="contentPane" layoutX="7.0" layoutY="135.0" prefHeight="470.0" prefWidth="410.0">
+         <children>
+            <Text fx:id="invalidPasswordField" fill="#e80000" layoutX="146.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Niewłaściwe hasło!" visible="false" wrappingWidth="128.3109130859375" />
+            <TableView fx:id="timetable" layoutX="14.0" layoutY="77.0" prefHeight="285.0" prefWidth="347.0">
+              <columns>
+                <TableColumn fx:id="dataColumn" prefWidth="75.0" text="Data" />
+                <TableColumn fx:id="begginingTime" prefWidth="127.19999694824219" text="Godzina rozpoczęcia" />
+                  <TableColumn fx:id="endingTime" prefWidth="143.99998779296874" text="Godzina zakończenia" />
+              </columns>
+            </TableView>
+            <DatePicker fx:id="beginDate" layoutX="130.0" layoutY="32.0" onAction="#showTimetable" />
+            <Text layoutX="35.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz datę:" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

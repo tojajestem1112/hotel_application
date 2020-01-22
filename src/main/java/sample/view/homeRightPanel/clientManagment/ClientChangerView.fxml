@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rightPane" prefHeight="600.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.homeRightPanel.clientManagment.ClientChangerController">
+   <children>
+      <AnchorPane fx:id="titlePane" layoutX="27.0" layoutY="39.0" prefHeight="71.0" prefWidth="370.0">
+         <children>
+            <Text layoutX="22.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edytuj klienta" wrappingWidth="314.9367370605469">
+               <font>
+                  <Font name="Calibri Bold" size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="contentPane" layoutX="7.0" layoutY="135.0" prefHeight="470.0" prefWidth="410.0">
+         <children>
+            <GridPane layoutX="14.0" layoutY="66.0" prefHeight="142.0" prefWidth="354.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.20001220703125" minWidth="10.0" prefWidth="91.7999755859375" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="289.59999389648436" minWidth="10.0" prefWidth="267.0000244140625" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="46.8000244140625" minHeight="20.0" prefHeight="15.599981689453124" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="57.60000610351563" minHeight="22.0" prefHeight="13.399981689453124" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="57.60000610351563" minHeight="20.0" prefHeight="16.200024414062504" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="82.79998168945312" minHeight="22.0" prefHeight="18.000012207031247" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="72.59998168945313" minHeight="20.0" prefHeight="18.00001831054687" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="72.59998168945313" minHeight="22.0" prefHeight="67.59998168945313" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="72.59998168945313" minHeight="20.0" prefHeight="67.59998168945313" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="72.59998168945313" minHeight="22.0" prefHeight="67.59998168945313" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="72.59998168945313" minHeight="20.0" prefHeight="67.59998168945313" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="72.59998168945313" minHeight="22.0" prefHeight="67.59998168945313" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Imię:" />
+                  <Text fx:id="nameText" strokeType="OUTSIDE" strokeWidth="0.0" text="[[imię]]" GridPane.columnIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zmień na:" textAlignment="RIGHT" wrappingWidth="88.78442764282227" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="nameField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Numer telefonu" textAlignment="RIGHT" wrappingWidth="88.78442764282227" GridPane.rowIndex="4" />
+                  <Text fx:id="invalidRoomNumber" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Niewłaściwy numer pokoju!" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Text fx:id="invalidPeopleNumber" fill="#f50000" strokeType="OUTSIDE" strokeWidth="0.0" text="Niewłaściwa liczba osób!" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko:" GridPane.rowIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zmień na:" textAlignment="RIGHT" wrappingWidth="88.78442764282227" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zmień na:" textAlignment="RIGHT" wrappingWidth="88.78442764282227" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Adres e-mail:" GridPane.rowIndex="6" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zmień na:" textAlignment="RIGHT" wrappingWidth="88.78442764282227" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Numer PESEL:" GridPane.rowIndex="8" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zmień na:" textAlignment="RIGHT" wrappingWidth="88.78442764282227" GridPane.rowIndex="9">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="surnameText" strokeType="OUTSIDE" strokeWidth="0.0" text="[[nazwisko]]" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Text fx:id="phoneNumberText" strokeType="OUTSIDE" strokeWidth="0.0" text="[[numer_telefonu]]" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Text fx:id="emailAdressText" strokeType="OUTSIDE" strokeWidth="0.0" text="[[adres_email]]" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Text fx:id="personalIdText" strokeType="OUTSIDE" strokeWidth="0.0" text="[[PESEL]]" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <TextField fx:id="surnameField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="phoneNumberField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="emailAdressField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField fx:id="personalIdField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+               </children>
+            </GridPane>
+            <Button fx:id="submitButton" disable="true" layoutX="266.0" layoutY="337.0" mnemonicParsing="false" onAction="#updateClient" onMousePressed="#setClient" prefHeight="26.0" prefWidth="98.0" text="Zmień" />
+            <Text fill="#746d6d" layoutX="14.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Uwaga! Jeżeli nie chcesz dokonać zmiany danej wartości, zosta pole puste," wrappingWidth="240.146484375">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Text>
+            <TextField fx:id="lookForClientField" layoutX="7.0" layoutY="8.0" prefHeight="26.0" prefWidth="266.0" />
+            <Button layoutX="289.0" layoutY="9.0" mnemonicParsing="false" onAction="#setClient" text="Ok" />
+            <Text fx:id="invalidId" fill="RED" layoutX="14.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nieznaleziono klienta" visible="false" />
+            <Text fx:id="invalidDataText" fill="RED" layoutX="103.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Niwłaściwe dane" visible="false" />
+            <Text fx:id="editError" fill="#f80000" layoutX="29.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nie można dokonać zmian! Dany numer PESEL jest już zajęcty!" visible="false" />
+         </children>
+      </AnchorPane>
+      <Text layoutX="11.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wprowadź numer pesel użytkownika" />
+   </children>
+</AnchorPane>

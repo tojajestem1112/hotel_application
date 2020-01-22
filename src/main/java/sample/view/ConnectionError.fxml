@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <Text layoutX="55.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Niemożna się połączyć z bazą danych. Zresetuj aplikację i skontaktuj się z administratorem." wrappingWidth="420.10162353515625">
+         <font>
+            <Font name="Calibri Light" size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

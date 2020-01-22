@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rightPane" prefHeight="600.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.homeRightPanel.accountManagment.MyDataController">
+   <children>
+      <AnchorPane fx:id="titlePane" layoutX="27.0" layoutY="39.0" prefHeight="71.0" prefWidth="370.0">
+         <children>
+            <Text layoutX="22.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moje dane" wrappingWidth="314.9367370605469">
+               <font>
+                  <Font name="Calibri Bold" size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="contentPane" layoutY="115.0" prefHeight="470.0" prefWidth="410.0">
+         <children>
+            <GridPane layoutX="33.0" layoutY="131.0" prefHeight="214.0" prefWidth="364.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.20001220703125" minWidth="10.0" prefWidth="99.00001220703125" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="289.59999389648436" minWidth="10.0" prefWidth="264.59998779296876" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="40.0" minHeight="6.0" prefHeight="6.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="6.0" prefHeight="6.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="6.0" prefHeight="6.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="6.0" prefHeight="6.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text fill="#514e4e" strokeType="OUTSIDE" strokeWidth="0.0" text="Imię:">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Text>
+                  <Text fill="#514e4e" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko:" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Text>
+                  <Text fill="#514e4e" strokeType="OUTSIDE" strokeWidth="0.0" text="Numer telefonu:" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Text>
+                  <Text fill="#514e4e" strokeType="OUTSIDE" strokeWidth="0.0" text="Adres e-mail:" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Text>
+                  <Text fx:id="nameText" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;&lt;imię&gt;&gt;" GridPane.columnIndex="1" />
+                  <Text fx:id="surnameText" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;nazwisko&gt;&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Text fx:id="phoneNumberText" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;&lt;numer_tel&gt;&gt;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Text fx:id="emailAdressText" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;&lt;email adress&gt;&gt;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

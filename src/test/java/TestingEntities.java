@@ -1,16 +1,13 @@
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import sample.module.entities.*;
-
-import java.math.BigDecimal;
-import java.sql.Date;
+import sample.model.entities.*;
 
 public class TestingEntities
 {
     public static void main(String [] args) {
         SessionFactory factory = new Configuration()
-                .configure("sample/module/hibernate.cfg.xml")
+                .configure("sample/model/hibernate.cfg.xml")
                 .addAnnotatedClass(Client.class)
                 .addAnnotatedClass(Employee.class)
                 .addAnnotatedClass(Reservation.class)

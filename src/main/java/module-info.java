@@ -10,15 +10,23 @@ module studia.programowanie.zdarzeniowe {
     requires java.xml.bind;
     requires com.sun.xml.bind;
     requires com.fasterxml.classmate;
-    exports sample.Controller.logging;
-    exports sample.Controller.homeLeftPanel;
-    exports sample.Controller.homeCentralPanel;
-    exports sample.Controller.homeRightPanel;
+    exports sample.controller.logging;
+    exports sample.controller.homeLeftPanel;
+    exports sample.controller.homeCentralPanel;
+    exports sample.controller.homeRightPanel.accountManagment;
+    exports sample.controller.homeRightPanel.clientManagment;
+    exports sample.controller.homeRightPanel.employeeManagment;
+    exports sample.controller.homeRightPanel.roomManagment;
+    exports sample.controller.homeRightPanel.personManagment;
 
     opens sample;
-    opens sample.Controller.logging;
-    opens sample.module.entities;
-    opens sample.Controller.homeLeftPanel;
-    opens sample.Controller.homeCentralPanel;
-    opens sample.Controller.homeRightPanel;
+    opens sample.controller.logging;
+    opens sample.model.entities;
+    opens sample.controller.homeLeftPanel;
+    opens sample.controller.homeCentralPanel;
+    opens sample.controller.homeRightPanel.accountManagment;
+    opens sample.controller.homeRightPanel.clientManagment;
+    opens sample.controller.homeRightPanel.employeeManagment;
+    opens sample.controller.homeRightPanel.roomManagment;
+    opens sample.controller.homeRightPanel.personManagment;
         }
